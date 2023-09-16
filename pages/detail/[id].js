@@ -65,7 +65,7 @@ export default function DetailPage({ detailPage, id }) {
             <div className='headline'>{detailPage.title}</div>
             <br />
             <div className='event-details'>
-              <h6>Event Details</h6>
+              <h6 className='mt-3'>Event Details</h6>
               <p className='details-paragraph'>{detailPage.about}</p>
             </div>
             <div className='keypoints'>
@@ -165,7 +165,6 @@ export async function getServerSideProps(context) {
   const req = await getData(`api/v1/events/${context.params.id}`);
 
   const res = req.data;
-  console.log(res);
 
   return {
     props: { detailPage: res, id: context.params.id },
